@@ -17,4 +17,4 @@ done
 sleep 5
 
 # restart on crash
-frida-server -D
+hluda -l 0.0.0.0:12313 -D
