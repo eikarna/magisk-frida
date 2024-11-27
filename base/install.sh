@@ -168,7 +168,11 @@ fi
   chmod -R 755 "$F_TARGETDIR"
 
   $UNZIP -qq -o "$ZIPFILE" "files/frida-server-$F_ARCH" -j -d "$F_TARGETDIR"
-  mv "$F_TARGETDIR/frida-server-$F_ARCH" "$F_TARGETDIR/frida-server"
+  mv "$F_TARGETDIR/frida-server-$F_ARCH" "$F_TARGETDIR/hluda"
+  ui_print "- IMPORTANT NOTE (MUST READ THIS!!): "
+  ui_print "- Due to many detection methods, the frida-server binary renamed to \"hluda\". Please don't think that is suspicious file."
+  ui_print "- If you want to run/use, just use -H parameter/connect it to YOUR_ANDROID_IP_ADDRESS:12313 (127.0.0.1 if local). Because the freeda binary listen on 12313 port."
+  ui_print "- If you have any Questions, see https://github.com/eikarna/magisk-strongR-frida"
 }
 
 # Only some special files require specific permissions
@@ -180,7 +184,7 @@ set_permissions() {
   set_perm_recursive $MODPATH 0 0 0755 0644
 
   # Custom permissions
-  set_perm $MODPATH/system/bin/frida-server 0 2000 0755 u:object_r:system_file:s0
+  set_perm $MODPATH/system/bin/freeda 0 2000 0755 u:object_r:system_file:s0
 }
 
 # You can add more functions to assist your custom script code
