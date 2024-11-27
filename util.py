@@ -21,6 +21,10 @@ def get_last_github_tag(project_name) -> str:
 def get_last_frida_tag() -> str:
     last_frida_tag = get_last_github_tag('CrackerCat/strongR-frida-android')
     print(f"Last frida tag: {last_frida_tag}")
+    # Write the last New Tag Frida
+    f = open("NEW_TAG.txt", "w")
+    f.write(last_frida_tag)
+    f.close()
     return last_frida_tag
 
 
