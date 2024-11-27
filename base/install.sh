@@ -172,7 +172,7 @@ fi
   ui_print "- IMPORTANT NOTE (MUST READ THIS!!): "
   ui_print "- Due to many detection methods, the frida-server binary renamed to \"hluda\". Please don't think that is suspicious file."
   ui_print "- If you want to run/use, just use -H parameter/connect it to YOUR_ANDROID_IP_ADDRESS:12313 (127.0.0.1 if local). Because the freeda binary listen on 12313 port."
-  ui_print "- If you have any Questions, see https://github.com/eikarna/magisk-strongR-frida"
+  ui_print "- If you have any Questions, visit https://github.com/eikarna/magisk-frida"
 }
 
 # Only some special files require specific permissions
