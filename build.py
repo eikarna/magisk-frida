@@ -57,9 +57,9 @@ def create_module_prop(path: Path, project_tag: str):
 name=MagiskFrida
 version={project_tag}
 versionCode={project_tag.replace(".", "").replace("-", "")}
-author=ViRb3 & enovella
+author=ViRb3 & Eikarna
 description=Run frida-server on boot
-updateJson=https://github.com/ViRb3/magisk-frida/releases/latest/download/updater.json"""
+updateJson=https://github.com/eikarna/magisk-frida/releases/latest/download/updater.json"""
 
     with open(path.joinpath("module.prop"), "w", newline="\n") as f:
         f.write(module_prop)
@@ -95,7 +95,7 @@ def create_updater_json(project_tag: str):
     updater ={
         "version": project_tag,
         "versionCode": int(project_tag.replace(".", "").replace("-", "")),
-        "zipUrl": f"https://github.com/ViRb3/magisk-frida/releases/download/{project_tag}/MagiskFrida-{project_tag}.zip",
+        "zipUrl": f"https://github.com/eikarna/magisk-frida/releases/download/{project_tag}/MagiskFrida-{project_tag}.zip",
         "changelog": "https://raw.githubusercontent.com/ViRb3/magisk-frida/master/CHANGELOG.md"
     }
 
@@ -124,7 +124,7 @@ def do_build(frida_tag: str, project_tag: str):
 
     create_module(project_tag)
 
-    archs = ["arm", "arm64", "x86", "x86_64"]
+    archs = ["arm", "arm64"]
     executor = concurrent.futures.ProcessPoolExecutor()
     futures = [executor.submit(fill_module, arch, frida_tag, project_tag)
                for arch in archs]
